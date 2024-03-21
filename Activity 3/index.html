@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    .navbar {
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            z-index: 999;
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        .navbar li {
+            display: inline-block;
+            margin: 0 20px;
+            position: relative;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: #fff;
+            text-transform: uppercase;
+            position: relative;
+        }
+
+        .navbar a::after {
+            content: '';
+            height: 3px;
+            width: 0;
+            background: tan;
+            position: absolute;
+            left: 50%;
+            bottom: -10px;
+            transition: 0.5s;
+            transform: translateX(-50%);
+        }
+
+        .navbar a:hover::after {
+            width: 100%;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+    <div class="navbar">
+        <ul>
+            <li><a href="/index.html">Back</a></li>
+            <li><a href="/What I learned/index.html" >What I learned</a></li>
+            <li><a href="/Activity 1/index.html" >Activity 1</a></li>
+            <li><a href="/Activity 2/index.html" >Activity 2</a></li>
+            <li><a href="/Activity 3/index.html">Activity 3</a></li>
+            <li><a href="/Activity 4/pages/home.html" >Activity 4</a></li>
+            <li><a href="/Activity 5/pages/index.html" >Activity 5</a></li>
+            <li><a href="/Activity 6/index.html">Activity 6</a></li>
+    
+        </ul>
+    </div>
+<body>
+    <div id="container" class="container">
+
+    </div>
+    <script type="module" src="./app.js"></script>
+</body>
+</html>

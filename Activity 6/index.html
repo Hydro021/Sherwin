@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .navbar {
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            z-index: 999;
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        .navbar li {
+            display: inline-block;
+            margin: 0 20px;
+            position: relative;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: #fff;
+            text-transform: uppercase;
+            position: relative;
+        }
+
+        .navbar a::after {
+            content: '';
+            height: 3px;
+            width: 0;
+            background: firebrick;
+            position: absolute;
+            left: 50%;
+            bottom: -10px;
+            transition: 0.5s;
+            transform: translateX(-50%);
+        }
+
+        .navbar a:hover::after {
+            width: 100%;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+ 
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 1; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height:100%;
+            overflow: auto; 
+            background-color: rgba(0,0,0,0.8); 
+        }
+
+        .modal-content {
+            background-color: transparent; 
+            margin: 15% auto; 
+            padding: 20px;
+            margin-left: 450px;
+            margin-top: 260px;
+            width: 60%; 
+        }
+
+        /* Close button */
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: rgb(254, 0, 0);
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Border style for Tanjiro modal */
+        .tanjiro-border {
+            border: 3px solid transparent; /* Set initial border color to transparent */
+            border-image: linear-gradient(to right, #ff5733, #ffa533, #ffd133, #fff133, #fffb33); /* Gradient border color */
+            border-image-slice: 1; /* Ensure the entire border area is covered by the gradient */
+        }
+
+        /* Border style for Nezuko modal */
+        .nezuko-border {
+            border: 3px solid; /* Set ang border sa 3px solid */
+            border-color: #ff6b6b; /* Ang color sa border */
+            border-radius: 5px; /* Rounded corners */
+        }
+
+        /* Border style for Zenitsu modal */
+        .zenitsu-border {
+            border: 3px solid transparent; /* Set initial border color to transparent */
+            border-image: linear-gradient(to right, #FFD700, #FF8C00); /* Gradient border color */
+            border-image-slice: 1; /* Ensure the entire border area is covered by the gradient */
+        }
+
+        /* Border style for Inosuke modal */
+        .inosuke-border {
+    border: 3px solid #D3D3D3; /* Set border color to match Inosuke's boar skin color */
+    border-radius: 5px; /* Rounded corners */
+}
+
+    </style>
+</head>
+<body>  
+    <div class="navbar">
+        <ul>
+            <h1 class="title">Demon Slayer</h1>
+            <li><a href="/index.html">Back</a></li>
+            <li><a href="/What I learned/index.html" >What I learned</a></li>
+            <li><a href="/Activity 1/index.html" >Activity 1</a></li>
+            <li><a href="/Activity 2/index.html" >Activity 2</a></li>
+            <li><a href="/Activity 3/index.html">Activity 3</a></li>
+            <li><a href="/Activity 4/pages/home.html" >Activity 4</a></li>
+            <li><a href="/Activity 5/pages/index.html" >Activity 5</a></li>
+            <li><a href="/Activity 6/index.html">Activity 6</a></li>
+        </ul>
+    </div>  
+
+    <div class="sectionOne" id="sectionOne"></div>
+
+    <div class="sectionTwo" id="sectionTwo"></div>
+    
+    <audio id="magicSound" src="demon slayer.mp3"></audio>
+
+    <!-- Modal pop-up for Tanjiro video -->
+    <div id="tanjiroModal" class="modal">
+        <div class="modal-content tanjiro-border">
+            <span class="close">&times;</span>
+            <iframe width="900" height="500" src="https://www.youtube.com/embed/ON2382Rg6G4?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+    
+    <!-- Modal pop-up for Nezuko video -->
+    <div id="nezukoModal" class="modal">
+        <div class="modal-content nezuko-border">
+            <span class="close closeNezuko">&times;</span>
+            <iframe width="900" height="500" src="https://www.youtube.com/embed/56WUfNekDhs?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <!-- Modal pop-up for Zenitsu video -->
+    <div id="zenitsuModal" class="modal">
+        <div class="modal-content zenitsu-border">
+            <span class="close closeZenitsu">&times;</span>
+            <iframe width="900" height="500" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <!-- Modal pop-up for Inosuke video -->
+    <div id="inosukeModal" class="modal">
+        <div class="modal-content inosuke-border">
+            <span class="close closeInosuke">&times;</span>
+            <iframe width="900" height="500" src="https://www.youtube.com/embed/XEy4LP-dKH8?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <script type="module" src="./app.js"></script>
+</body>
+</html>
